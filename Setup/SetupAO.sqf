@@ -1,9 +1,9 @@
 // Select a point, and make it the AO 
 
 Lmn_activeAO = selectRandom (nearestLocations [[0,0,0], Lmn_AOFinder, 50000]);
-// _mkr setMarkerText format ["Capture this area - %1", Lmn_activeAO];
 
-[WEST, "Capture", ["Capture Area", "Capture Area", ""], position Lmn_activeAO, true, 1, true, "attack", false] call BIS_fnc_taskCreate;
+[WEST, "Capture", [format ["Capture %1", name Lmn_ActiveAO], format ["Capture the area surrounding %1, be aware that Enemy forces will attempt to stop your attempts and mobilize once they see you!", name Lmn_activeAO], ""], position Lmn_activeAO, true, 1, true, "attack", false] call BIS_fnc_taskCreate;
+
 
 
 // Enemy Force Size
