@@ -2,12 +2,12 @@
 params ["_type"];
 
 // Determine types of enemies 
-_infantry = "true" configClasses (configfile >> "CfgGroups" >> "East" >> "UK3CB_MDF_O" >> "Infantry");
-_armor = "true" configClasses (configfile >> "CfgGroups" >> "East" >> "UK3CB_MDF_O" >> "Armored");
-_mechanized = "true" configClasses (configfile >> "CfgGroups" >> "East" >> "UK3CB_MDF_O" >> "Mechanized");
-_motorized = "true" configClasses (configfile >> "CfgGroups" >> "East" >> "UK3CB_MDF_O" >> "Motorized");
-_specOps = "true" configClasses (configfile >> "CfgGroups" >> "East" >> "UK3CB_MDF_O" >> "SpecOps");
-_support = "true" configClasses (configfile >> "CfgGroups" >> "East" >> "UK3CB_MDF_O" >> "Support");
+_infantry = "true" configClasses (configfile >> "CfgGroups" >> "East" >> enemyFaction >> "Infantry");
+_armor = "true" configClasses (configfile >> "CfgGroups" >> "East" >> enemyFaction >> "Armored");
+_mechanized = "true" configClasses (configfile >> "CfgGroups" >> "East" >> enemyFaction >> "Mechanized");
+_motorized = "true" configClasses (configfile >> "CfgGroups" >> "East" >> enemyFaction >> "Motorized");
+_specOps = "true" configClasses (configfile >> "CfgGroups" >> "East" >> enemyFaction >> "SpecOps");
+_support = "true" configClasses (configfile >> "CfgGroups" >> "East" >> enemyFaction >> "Support");
 
 // Select and spawn enemy types
 _types = [_infantry, _armor, _mechanized, _motorized, _specOps, _support];
