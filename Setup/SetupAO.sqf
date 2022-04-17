@@ -32,6 +32,13 @@ if (_jetSupport > 2) then {
 	execVM "Enemy\Jet.sqf";
 };
 
+// Chance of Minefield present in AO
+_minefieldChance = random 100;
+if (_minefieldChance > 2) then {
+	// Script to add minefield to the AO 
+	execVM "Enemy\Minefield.sqf";
+};
+
 // Add enemy Static weapons 
 _staticWeapons = random 100;
 if (_staticWeapons > 2) then {
