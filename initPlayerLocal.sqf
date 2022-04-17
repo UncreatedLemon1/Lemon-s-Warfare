@@ -1,5 +1,5 @@
 // Add player persistence
-_playerData = profileNameSpace getVariable "Player_Data";
+_playerData = profileNameSpace getVariable format ["Player_Data_%1_%2", missionName, worldName];
 
 _loadout = _playerData select 0;
 _position = _playerData select 1;
@@ -20,13 +20,7 @@ while {true} do {
   _dir = getDir player;
   
   // Save variable to player profile
-  profileNameSpace setVariable [format ["Player_Data_%1_%2", missionName, worldName], 
-    [
-      _loadout,
-      _position,
-      _dir
-    ];
-  ];
+  profileNameSpace setVariable [format ["Player_Data_%1_%2", missionName, worldName], [_loadout, _position, _dir]];
   
   sleep 5;
 };

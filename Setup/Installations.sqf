@@ -2,28 +2,28 @@
 _ArtyCount = 0;
 _AACount = 0;
 
-_ArtyTotal = random [15, 40, 60];
-_AATotal = random [15, 40, 60];
+_ArtyTotal = random [10, 20, 25];
+_AATotal = random [10, 20, 25];
 
 while {true} do {
 	if (_ArtyCount < _artyTotal) then {
-		_ArtyTypes = ["UK3CB_MDF_O_M119", "UK3CB_MDF_O_M252", "UK3CB_MDF_O_MTVR_MLRS"];
+		_ArtyTypes = ["RHS_BM21_VDV_01", "rhs_D30_at_vdv", "rhs_D30_vdv"];
 		_arty = selectRandom _artyTypes;
-		_findPos = [position Lmn_activeAO, 5, 10000, 3, 0, 0, 0, [], position Lmn_activeAO] call BIS_fnc_findSafePos;
+		_findPos = [position Lmn_activeAO, 5, 5000, 3, 0, 0, 0, [], position Lmn_activeAO] call BIS_fnc_findSafePos;
 		_arty = [_findPos, 0, _arty, east] call BIS_fnc_spawnVehicle;
 		_grp = _arty select 2;
 		_grp setCombatMode "RED";
-		_artyTotal = _artyTotal + 1;
+		_ArtyCount = _ArtyCount + 1;
 	};
 
 	if (_AACount < _AAtotal) then {
-		_ArtyTypes = ["UK3CB_MDF_O_M2_TriPod", "UK3CB_MDF_O_Stinger_AA_pod", "UK3CB_MDF_O_MTVR_Zu23"];
+		_ArtyTypes = ["rhs_Igla_AA_pod_vdv", "rhs_gaz66_zu23_vv", "RHS_Ural_Zu23_VV_01", "RHS_ZU23_VDV"];
 		_arty = selectRandom _artyTypes;
-		_findPos = [position Lmn_activeAO, 5, 10000, 3, 0, 0, 0, [], position Lmn_activeAO] call BIS_fnc_findSafePos;
+		_findPos = [position Lmn_activeAO, 5, 5000, 3, 0, 0, 0, [], position Lmn_activeAO] call BIS_fnc_findSafePos;
 		_arty = [_findPos, 0, _arty, east] call BIS_fnc_spawnVehicle;
 		_grp = _arty select 2;
 		_grp setCombatMode "RED";
-		_AATotal = _AATotal + 1;
+		_AACount = _AACount + 1;
 	};
 
 	sleep 1;

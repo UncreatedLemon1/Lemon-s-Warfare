@@ -1,15 +1,9 @@
 // Select a point, and make it the AO 
 
 Lmn_activeAO = selectRandom (nearestLocations [[0,0,0], Lmn_AOFinder, 50000]);
+_locName = name Lmn_activeAO;
 
-[WEST, "Capture", [format ["Capture %1", name Lmn_ActiveAO], format ["Capture the area surrounding %1, be aware that Enemy forces will attempt to stop your attempts and mobilize once they see you!", name Lmn_activeAO], ""], position Lmn_activeAO, true, 1, true, "attack", false] call BIS_fnc_taskCreate;
-
-execVM "Enemy\Counter.sqf";
-
-
-// Enemy Force Size
-_totalGrp = random [20, 35, 50];
-_currentGroup = 0;
+[WEST, "Capture", [format ["Capture the area surrounding %1", _locName], format ["Capture %1", _locName], ""], position Lmn_activeAO, true, 1, true, "attack", false] call BIS_fnc_taskCreate;
 
 // Chance of re-inforcements 
 _reinforce = random 100;
@@ -46,8 +40,13 @@ if (_staticWeapons > 2) then {
 	execVM "Enemy\Static.sqf";
 };
 
-while {_currentGroup < _totalGrp} do {
+execVM "Enemy\Counter.sqf";
+
+_totalGroups = random [5, 10, 15];
+_currentGroups = 0;
+while {_currentGroups < _totalGroups} do {
 	[]execVM "Setup\SpawnGroup.sqf";
 	sleep 1;
-	_currentGroup = _currentGroup + 1;
+	_currentGroups = _currentGroups + 1;
 };
+
