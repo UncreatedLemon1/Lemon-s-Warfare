@@ -6,5 +6,5 @@
 [] execVM "Setup\Locations.sqf";
 
 // Define enemy Faction
-enemyFaction = "";
+enemyFaction = "rhs_faction_vdv";
 
