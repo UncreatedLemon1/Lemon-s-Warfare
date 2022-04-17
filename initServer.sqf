@@ -4,3 +4,7 @@
 
 // Setup Map 
 [] execVM "Setup\Locations.sqf";
+
+// Define enemy Faction
+enemyFaction = "";
+
