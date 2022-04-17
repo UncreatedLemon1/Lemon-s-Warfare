@@ -4,6 +4,7 @@ Lmn_activeAO = selectRandom (nearestLocations [[0,0,0], Lmn_AOFinder, 50000]);
 
 [WEST, "Capture", [format ["Capture %1", name Lmn_ActiveAO], format ["Capture the area surrounding %1, be aware that Enemy forces will attempt to stop your attempts and mobilize once they see you!", name Lmn_activeAO], ""], position Lmn_activeAO, true, 1, true, "attack", false] call BIS_fnc_taskCreate;
 
+execVM "Enemy\Counter.sqf";
 
 
 // Enemy Force Size
