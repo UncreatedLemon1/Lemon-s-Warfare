@@ -4,7 +4,7 @@ _currentReinforce = 0;
 while {_currentReinforce < _totalReinforce} do {
 	sleep random 600;
 	// Bring in enemy reinforcements
-	[player,"The enemy are receiving reinforcements! Watch out!"] remoteExec ["globalChat",0];
+	["The enemy are receiving reinforcements! Watch out!"] remoteExec ["systemChat",0];
 	// Find a safe location to spawn items 
 	_selectedPos = [position Lmn_activeAO, 2000, 2500, 3, 0, 0, 0, [], position Lmn_activeAO] call BIS_fnc_findSafePos;
 
