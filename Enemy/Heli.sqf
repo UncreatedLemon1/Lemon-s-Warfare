@@ -4,7 +4,7 @@ while {true} do {
 	if (_heliCount < 5) then {
 		// hint "HELI";
 		sleep random 180;
-		[player,"Russian Helicopters have been spotted in the vicinity of the AO"] remoteExec ["globalChat",0];
+		["Russian Helicopters have been spotted in the vicinity of the AO"] remoteExec ["systemChat",0];
 		_heliTypes = [
 			"RHS_Mi24V_vdv",
 			"RHS_Mi24P_vdv"
