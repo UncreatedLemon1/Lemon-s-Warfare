@@ -11,10 +11,6 @@ _mines = [
 
 // Find location for minefield
 _minefieldPos = [position Lmn_activeAO, 10, 400, 3, 0, 0, 0, [], position Lmn_activeAO] call BIS_fnc_findSafePos;
-_mkr = createMarker [format ["%1_Mines", _minefieldPos], _minefieldPos];
-_mkr setMarkerType "HD_DOT";
-_mkr setMarkerColor "COLORRED";
-
 
 // How many Mines are present in the AO? 
 _totalMines = random 15;

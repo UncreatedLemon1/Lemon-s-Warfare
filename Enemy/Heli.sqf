@@ -1,9 +1,9 @@
 // Monitor AO airspace and provides support
 _heliCount = 0;
 while {true} do {
-	_heliSpawn = random 100;
-	if ((_heliSpawn > 2) and (_heliCount < 5)) then {
+	if (_heliCount < 5) then {
 		// hint "HELI";
+		sleep random 180;
 		[player,"Russian Helicopters have been spotted in the vicinity of the AO"] remoteExec ["globalChat",0];
 		_heliTypes = [
 			"RHS_Mi24V_vdv",

@@ -32,6 +32,8 @@ sleep 2;
 
 ["Capture", west, true] call BIS_fnc_deleteTask;
 
+sleep 5;
+
 // Reset the map 
 hint "Establishing next AO...";
 [] execVM "Setup\Locations.sqf";

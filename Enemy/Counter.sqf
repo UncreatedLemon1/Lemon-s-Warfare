@@ -1,7 +1,7 @@
 // Enemy counter to see when objective is cleared out
 
 while {true} do {
-  sleep 10;
+  sleep 120;
   _ao = getPos Lmn_activeAO;
   _activeAI = [];
   _aiCount = 0;
@@ -19,5 +19,4 @@ while {true} do {
   } else {
     //hint format ["%1", _aiCount];
   };
-  sleep 10;
 };

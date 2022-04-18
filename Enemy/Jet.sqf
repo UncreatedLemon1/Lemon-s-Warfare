@@ -1,8 +1,8 @@
 // Monitor AO airspace and provides support
 _jetCount = 0;
 while {true} do {
-	_jetSpawn = random 100;
-	if ((_jetSpawn > 2) and (_jetCount < 3)) then {
+	if (_jetCount < 3) then {
+		sleep random 180;
 		[player,"Reports are coming in that Russian Jets are deploying to the AO!"] remoteExec ["globalChat",0];
 		// hint "JET";
 		_jetTypes = [
