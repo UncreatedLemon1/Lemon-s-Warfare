@@ -11,7 +11,7 @@ _static = [
 	"rhs_Kornet_9M133_2_vdv"
 ];
 
-_staticTotal = random 5;
+_staticTotal = random 15;
 _staticCount = 0;
 
 while {_staticCount < _staticTotal} do {
