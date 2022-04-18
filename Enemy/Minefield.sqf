@@ -1,5 +1,5 @@
 // Creates Minefield in AO
-[player,"The enemy has had time to dig in, beware of mines!"] remoteExec ["globalChat",0];
+["The enemy has had time to dig in, beware of mines!"] remoteExec ["systemChat",0];
 // Define Mine types
 _mines = [
   "ATMine",
