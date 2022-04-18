@@ -3,7 +3,7 @@ _jetCount = 0;
 while {true} do {
 	if (_jetCount < 3) then {
 		sleep random 180;
-		[player,"Reports are coming in that Russian Jets are deploying to the AO!"] remoteExec ["globalChat",0];
+		["Reports are coming in that Russian Jets are deploying to the AO!"] remoteExec ["systemChat",0];
 		// hint "JET";
 		_jetTypes = [
 			"rhs_mig29s_vvsc",
