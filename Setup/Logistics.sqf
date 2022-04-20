@@ -3,4 +3,7 @@
 Lmn_FobType = "Land_Cargo20_EMP_Training_F";
 
 // Add actions to world
-//[Logi_Point,["Logistics Menu", {createDialog "LmnSpawner"}]] remoteExec ["addAction", 0, true];
+[arsenalBox,["Logistics Menu", {_object = lmn_fobType createVehicle position player; 
+	_object setVariable ["Persist", true]
+	//[_object] execVM "Setup\serverPersistence.sqf";
+	}]] remoteExec ["addAction", 0, true];

@@ -9,14 +9,14 @@ if (isNil "_playerData") then {
  
 } else {
   player setUnitLoadout _loadout;
-  player setPos _position;
+  player setPosASL _position;
   player setDir _dir;
 };
 
 while {true} do {
   // Get player variables
   _loadout = getUnitLoadout player;
-  _position = getPos player;
+  _position = getPosASL player; 
   _dir = getDir player;
   
   // Save variable to player profile

@@ -1,8 +1,8 @@
 // Monitor AO airspace and provides support
 _jetCount = 0;
+_totalJets = random 3;
 while {true} do {
-	if (_jetCount < 3) then {
-		sleep random 180;
+	if (_jetCount < _totalJets) then {
 		["Reports are coming in that Russian Jets are deploying to the AO!"] remoteExec ["systemChat",0];
 		// hint "JET";
 		_jetTypes = [
@@ -19,6 +19,6 @@ while {true} do {
 		_grp setCombatMode "RED";
 		_jetCount = _jetCount + 1;
 	};
-	_timer = random 320;
-	sleep _timer;
+
+	sleep random 360;
 };
