@@ -1,5 +1,3 @@
-if (!isServer) exitWith {};
-
 // Find all objects in the game
 _objects = allMissionObjects "all";
 while {true} do {

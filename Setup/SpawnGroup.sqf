@@ -14,16 +14,24 @@ _support = "true" configClasses (configfile >> "CfgGroups" >> "East" >> "rhs_fac
 _types = [_infantry, _armor, _mechanized, _motorized, _specOps, _support];
 _AO = getPos lmn_activeAO;
 
-_selectedType = selectRandom _types;
-_selectedSpawn = selectRandom _selectedType;
-_selectedPos = [_AO, 10, 600, 10, 0, 0, 0, [], _ao] call BIS_fnc_findSafePos;
 
-_grp = [_selectedPos, east, _selectedSpawn] call BIS_fnc_spawnGroup;
+_totalGroups = random [5, 10, 15];
+_currentGroups = 0;
 
-// Give group a waypoint 
-[_grp, _AO, 600] call BIS_fnc_taskPatrol;
+while {_currentGroups < _totalGroups} do {
+	_selectedType = selectRandom _types;
+	_selectedSpawn = selectRandom _selectedType;
+	_selectedPos = [_AO, 10, 400, 10, 0, 0, 0, [], _ao] call BIS_fnc_findSafePos;
 
-// Set group to RED / Alert
-_grp setCombatMode "RED";
+	_grp = [_selectedPos, east, _selectedSpawn] call BIS_fnc_spawnGroup;
 
-sleep 2;
+	// Give group a waypoint 
+	[_grp, _AO, 500] call BIS_fnc_taskPatrol;
+
+	// Set group to RED / Alert
+	_grp setCombatMode "RED";
+	_currentGroups = _currentGroups + 1;
+
+	sleep 1;
+
+};
