@@ -1,5 +1,5 @@
 // Select a point, and make it the AO 
-_selectAO = nearestLocations [[0,0,0], Lmn_AOFinder, 50000];
+_selectAO = nearestLocations [centerPoint, Lmn_AOFinder, 20000];
 Lmn_activeAO = selectRandom _selectAO;
 _locName = name Lmn_activeAO;
 
@@ -33,18 +33,14 @@ if (_heliSupport > 25) then {
 	execVM "Enemy\Heli.sqf";
 };
 
+// Add enemy Ambush points 
+execVM "Setup\Ambush.sqf";
+
 // Chance of Jet support 
 _jetSupport = random 100;
 if (_jetSupport > 25) then {
 	// Script to add helicopters spawning from off map to support AI 
 	execVM "Enemy\Jet.sqf";
-};
-
-// Chance of Minefield present in AO
-_minefieldChance = random 100;
-if (_minefieldChance > 25) then {
-	// Script to add minefield to the AO 
-	execVM "Enemy\Minefield.sqf";
 };
 
 // Add enemy Static weapons 

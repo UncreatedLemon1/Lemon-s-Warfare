@@ -5,6 +5,7 @@
 
 // Setup Map 
 [] execVM "Setup\Locations.sqf";
-// [] execVM "Setup\Load.sqf";
+//[] execVM "Setup\Load.sqf";
 // [] execVM "Setup\Logistics.sqf";
 // [] execVM "Setup\serverPersistence.sqf";
+//[] execVM "Setup\VehiclePersistence.sqf";

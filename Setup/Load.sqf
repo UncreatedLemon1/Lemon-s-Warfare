@@ -1,17 +1,27 @@
 // Load server profilenamespace data and place objects; 
 
-_savedObjects = profileNameSpace getVariable [format ["MissionData_%1_%2", missionName, worldName], []];
+Lmn_Fnc_CreateVehicle = {
+	// private _veh = createVehicle [_this select 0, _this select 1, [], 0, "FORM"];
+	private _veh = createVehicle [_this select 0, _this select 1, [], 0, "FORM"];
+	_veh enableSimulationGlobal true;
+	_veh setVariable ["BIS_enableRandomization", false];
+	
+	_veh setDir (_this select 2);
+	_veh setFuel (this select 3);
+	_veh setMass (_this select 4);
 
+	private _textures = (_this select 6);
+	private _phaseData = (_this select 7);
+
+	{ _veh setObjectTextureGlobal [_forEachIndex, _x]; } forEach _textures;
+	{ _veh animate [_x, (_phaseData select _forEachIndex)]; } forEach (animationNames _veh);
+	{ _veh setHitIndex [_forEachIndex , _x, false]; } forEach (_this select 5);
+};
+
+
+// Current result is saved in variable _x
+_data = profileNameSpace getVariable format ["Vehicles_%1_%2", missionName, worldName];
 {
 	// Current result is saved in variable _x
-	_pos = _x select 0;
-	_type = _x select 1;
-	_dir = _x select 2;
-	_dmg = _x select 3;
-
-	_object = _type createVehicle _pos;
-	_object setDir _dir;
-	_object setDamage _dmg;
-
-	_object setVariable ["Persist", true];	
-} forEach _savedObjects;
+	_veh = _x call Lmn_fnc_createVehicle;
+} forEach _data;
