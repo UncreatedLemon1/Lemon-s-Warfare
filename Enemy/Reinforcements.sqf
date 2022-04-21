@@ -28,4 +28,6 @@ while {_currentReinforce < _totalReinforce} do {
 	_patrolPoint = [position Lmn_activeAO, 100, 600, 3, 0, 0, 0, [], position Lmn_activeAO] call BIS_fnc_findSafePos;
 	_wp1 = _grp addWayPoint [_patrolPoint, 0, 2];
 	_wp1 setWaypointType "SAD";
+
+_currentReinforce = _currentReinforce + 1;
 };
