@@ -20,5 +20,5 @@ while {true} do {
 		_jetCount = _jetCount + 1;
 	};
 
-	sleep random 360;
+	sleep random 600;
 };

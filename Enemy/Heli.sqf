@@ -19,5 +19,5 @@ while {true} do {
 		_grp setCombatMode "RED";
 		_heliCount = _heliCount + 1;
 	};
-	sleep random 320;
+	sleep random 600;
 };

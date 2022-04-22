@@ -26,6 +26,12 @@ if (_reinforce > 25) then
 	execVM "Enemy\Reinforcements.sqf";
 };
 
+// Minefields at AO 
+_mineChance = random 100;
+if (_mineChance > 25) then {
+	execVM "Enemy\Minefield.sqf";
+};
+
 // Chance of Helicopter 
 _heliSupport = random 100;
 if (_heliSupport > 25) then {
