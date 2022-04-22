@@ -22,11 +22,31 @@ while {_currentReinforce < _totalReinforce} do {
 
 	// Set orders
 	_movePos = [position Lmn_activeAO, 100, 600, 40, 0, 0, 0, [], position Lmn_activeAO] call BIS_fnc_findSafePos;
-	_wp = _grp2 addWaypoint [_movePos, 0, 1];
+	_wp = _grp addWaypoint [_movePos, 0, 1];
 	_wp setWaypointType "TR UNLOAD";
+
+	_movePos = [position Lmn_activeAO, 300, 1000, 40, 0, 0, 0, [], position Lmn_activeAO] call BIS_fnc_findSafePos;
+	_wp = _grp addWaypoint [_movePos, 0, 2];
+	_wp setWaypointType "SAD";
+
+	_movePos = [position Lmn_activeAO, 300, 1000, 40, 0, 0, 0, [], position Lmn_activeAO] call BIS_fnc_findSafePos;
+	_wp = _grp addWaypoint [_movePos, 0, 3];
+	_wp setWaypointType "SAD";
+
+	_movePos = [position Lmn_activeAO, 300, 1000, 40, 0, 0, 0, [], position Lmn_activeAO] call BIS_fnc_findSafePos;
+	_wp = _grp addWaypoint [_movePos, 0, 4];
+	_wp setWaypointType "SAD";
+
+	_patrolPoint = [position Lmn_activeAO, 100, 600, 3, 0, 0, 0, [], position Lmn_activeAO] call BIS_fnc_findSafePos;
+	_wp1 = _grp2 addWayPoint [_patrolPoint, 0, 1];
+	_wp1 setWaypointType "SAD";
 
 	_patrolPoint = [position Lmn_activeAO, 100, 600, 3, 0, 0, 0, [], position Lmn_activeAO] call BIS_fnc_findSafePos;
 	_wp1 = _grp2 addWayPoint [_patrolPoint, 0, 2];
+	_wp1 setWaypointType "SAD";
+
+	_patrolPoint = [position Lmn_activeAO, 100, 600, 3, 0, 0, 0, [], position Lmn_activeAO] call BIS_fnc_findSafePos;
+	_wp1 = _grp2 addWayPoint [_patrolPoint, 0, 3];
 	_wp1 setWaypointType "SAD";
 
 	_currentReinforce = _currentReinforce + 1;

@@ -19,13 +19,10 @@ while {_activeMinefields < _totalMinefields} do {
 
   // place individual mines 
   _totalMines = random 50;
-  for "_i" from 0 to _totalMines do {
-    _minePos = [_minefieldPos, 1, 30, 2, 0, 0, 0, [], _minefieldPos] call BIS_fnc_findSafePos;
+  for "_i" from 0 to _totalMines step 1 do {
+    _minePos = [_minefieldPos, 1, 60, 2, 0, 0, 0, [], _minefieldPos] call BIS_fnc_findSafePos;
     _mine = selectRandom _mines;
-    _mine = createMine [_mine, _minePos, [], 0];
-    _mkr = createMarker [format ["%1_Mines", _minePos], _mineFieldPos];
-    _mkr setMarkerType "HD_DOT";
-    _mkr setMarkerColor "COLORRED";
+    _mine = createMine [_mine, _minePos, [], 1];
   };
   
   _sign = "Land_Sign_MinesDanger_English_F" createVehicle _mineFieldPos;
