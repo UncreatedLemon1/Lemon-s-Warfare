@@ -4,7 +4,6 @@ _totalHeli = random 3;
 while {true} do {
 	if (_heliCount < _totalHeli) then {
 		// hint "HELI";
-		sleep random 180;
 		["Russian Helicopters have been spotted in the vicinity of the AO"] remoteExec ["systemChat",0];
 		_heliTypes = [
 			"RHS_Mi24V_vdv",
