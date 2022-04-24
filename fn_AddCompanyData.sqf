@@ -3,6 +3,10 @@ params [_company, _origin, _info, _owner, _vehicles, _users, _pendingMembers];
 
 _inidbi = ["new", _company] call OO_INIDBI;
 
+if ("exists" call _inidbi) then {
+} else {
+
+
 // Add Company Name to Database
 ["write", [_company, "Company Name", _company]] call _inidbi;
 
@@ -23,3 +27,4 @@ _inidbi = ["new", _company] call OO_INIDBI;
 
 // Add Company Pending Members to Database
 ["write", [_company, "Company Information", _pendingMembers]] call _inidbi;
+};
