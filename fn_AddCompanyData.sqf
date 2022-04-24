@@ -7,7 +7,7 @@ _inidbi = ["new", _company] call OO_INIDBI;
 ["write", [_company, "Company Name", _company]] call _inidbi;
 
 // Add Company Information to Database
-["write", [_company, "Company County of Origin", _origin]] call _inidbi;
+["write", [_company, "Company Country of Origin", _origin]] call _inidbi;
 
 // Add Company Information to Database
 ["write", [_company, "Company Information", _info]] call _inidbi;
