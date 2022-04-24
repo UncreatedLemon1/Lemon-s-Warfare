@@ -1,1 +1,8 @@
 respawnOnStart = -1;
+
+class CfgRadioStations {
+  class Simulator {
+    name = "Simulator Radio";
+    url = "https://simulatorradio.stream/stream?1558071009628";
+  };
+};
