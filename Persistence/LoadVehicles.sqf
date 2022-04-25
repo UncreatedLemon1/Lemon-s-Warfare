@@ -1,5 +1,4 @@
 _inidbi = ["new", format ["Vehicles_%1_%2", missionName, worldName]] call OO_INIDBI;
-
 _savedVehicles = "getSections" call _inidbi;
 
 {

@@ -9,3 +9,11 @@
 // Persistence 
 [] execVM "Persistence\LoadVehicles.sqf";
 [] execVM "Persistence\LoadObjects.sqf";
+
+// Group Management 
+[] execVM "Setup\Company_Init.sqf";
+
+// Vehicle Spawner 
+v_spawner addaction ["Spawn Vehicle", {
+	[] execVM "UI\Scripts\createVehicle.sqf";
+}];

@@ -7,7 +7,6 @@ _company = _data select 0;
 _sections = "getSections" call _inidbi;
 
 if (_company in _sections) then {
-	exitWith {};
 } else 
 {
 

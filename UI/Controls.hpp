@@ -39,8 +39,8 @@ class LmnOS_Menu
 			y = 0.258 * safezoneH + safezoneY;
 			w = 0.190781 * safezoneW;
 			h = 0.187 * safezoneH;
-			action = "closeDialog 2002; execVM 'populateList.sqf'"; 
-			onLBSelChanged = "execVM 'textChange.sqf'";
+			action = "closeDialog 2002; execVM 'UI\Scripts\populateList.sqf'"; 
+			onLBSelChanged = "execVM 'UI\Scripts\textChange.sqf'";
 		};
 		class RscButton_1601: RscButton
 		{
@@ -70,7 +70,7 @@ class LmnOS_Menu
 			y = 0.258 * safezoneH + safezoneY;
 			w = 0.190781 * safezoneW;
 			h = 0.187 * safezoneH;
-			action = "closeDialog 2002; execVM 'CompanyAdminInit.sqf'";
+			action = "closeDialog 2002; execVM 'UI\Scripts\CompanyAdminInit.sqf'";
 		};
 	};
 };
@@ -118,7 +118,7 @@ class LmnOS_Directory
 			y = 0.709 * safezoneH + safezoneY;
 			w = 0.0928125 * safezoneW;
 			h = 0.088 * safezoneH;
-			action = "execVM 'ApplyCompany.sqf'";
+			action = "execVM 'UI\Scripts\ApplyCompany.sqf'";
 		};
 		class RscButton_1601: RscButton
 		{
@@ -344,5 +344,42 @@ class LmnOS_Vehicles
 			action = "closeDialog 2006; createDialog 'LmnOS_Menu'";
 		};
 
+	};
+};
+
+class LmnOS_VehicleSpawn
+{
+	idd = 2007;
+	class Controls
+	{
+		class RscPicture_1200: RscPicture
+		{
+			idc = 1200;
+			text = "UI\Images\Company Directory2.jpg";
+			x = 0.144116 * safezoneW + safezoneX;
+			y = 0.06198 * safezoneH + safezoneY;
+			w = 0.732187 * safezoneW;
+			h = 0.847 * safezoneH;
+		};
+		class RscListbox_1500: RscListBox
+		{
+			idc = 1500;
+
+			x = 0.242187 * safezoneW + safezoneX;
+			y = 0.225 * safezoneH + safezoneY;
+			w = 0.190781 * safezoneW;
+			h = 0.517 * safezoneH;
+		};
+		class RscButton_1600: RscButton
+		{
+			idc = 1600;
+
+			text = "Spawn Selected Vehicle"; //--- ToDo: Localize;
+			x = 0.45875 * safezoneW + safezoneX;
+			y = 0.709 * safezoneH + safezoneY;
+			w = 0.0928125 * safezoneW;
+			h = 0.088 * safezoneH;
+			action = "execVM 'UI\Scripts\spawnVehicle.sqf'";
+		};
 	};
 };
