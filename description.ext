@@ -1,5 +1,4 @@
-#include "UI\baseControls.hpp"
+RespawnOnStart = -1;
+
+#include "UI\Defines.hpp"
 #include "UI\Controls.hpp"
-
-
-respawnOnStart = -1;

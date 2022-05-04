@@ -15,7 +15,7 @@ _activeMinefields = 0;
 
 while {_activeMinefields < _totalMinefields} do {
   // Find location for minefield
-  _minefieldPos = [position Lmn_activeAO, 10, 800, 3, 0, 0, 0, [], position Lmn_activeAO] call BIS_fnc_findSafePos;
+  _minefieldPos = [Lmn_activeAO, 10, 800, 3, 0, 0, 0, [], Lmn_activeAO] call BIS_fnc_findSafePos;
 
   // place individual mines 
   _totalMines = random 50;

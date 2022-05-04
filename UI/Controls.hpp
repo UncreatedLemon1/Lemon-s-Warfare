@@ -1,385 +1,330 @@
-class LmnOS_Loading
+class LmnOS_Home
 {
-	idd = 2001;
-	class Controls
+	idd = 1;
+	onLoad = "execVM 'UI\Scripts\homepage.sqf'";
+	class Controls 
 	{
 		class RscPicture_1200: RscPicture
 		{
 			idc = 1200;
-			text = "UI\Images\Loading.jpg";
-			x = 0.144116 * safezoneW + safezoneX;
-			y = 0.06198 * safezoneH + safezoneY;
-			w = 0.732187 * safezoneW;
-			h = 0.847 * safezoneH;
+			text = "UI\Images\LemonOS_Home2.jpg";
+			x = 0.159687 * safezoneW + safezoneX;
+			y = 0.082 * safezoneH + safezoneY;
+			w = 0.690938 * safezoneW;
+			h = 0.814 * safezoneH;
 		};
-
-	};
-};
-
-class LmnOS_Menu
-{
-	idd = 2002;
-	class Controls
-	{
-		class RscPicture_1200: RscPicture
-		{
-			idc = 1200;
-
-			text = "UI\Images\Main Menu.jpg";
-			x = 0.144116 * safezoneW + safezoneX;
-			y = 0.06198 * safezoneH + safezoneY;
-			w = 0.732187 * safezoneW;
-			h = 0.847 * safezoneH;
-		};
-		class RscButton_1600: RscButton
+		class MyProfile: RscButton
 		{
 			idc = 1600;
-			text = "Company Directory"; //--- ToDo: Localize;
-			x = 0.242187 * safezoneW + safezoneX;
-			y = 0.258 * safezoneH + safezoneY;
-			w = 0.190781 * safezoneW;
+			x = 0.5 * safezoneW + safezoneX;
+			y = 0.192 * safezoneH + safezoneY;
+			w = 0.0979687 * safezoneW;
 			h = 0.187 * safezoneH;
-			action = "closeDialog 2002; execVM 'UI\Scripts\populateList.sqf'"; 
-			onLBSelChanged = "execVM 'UI\Scripts\textChange.sqf'";
 		};
-		class RscButton_1601: RscButton
+		class Directory: RscButton
 		{
 			idc = 1601;
-			text = "Logistics Menu"; //--- ToDo: Localize;
-			x = 0.247344 * safezoneW + safezoneX;
-			y = 0.555 * safezoneH + safezoneY;
-			w = 0.201094 * safezoneW;
+			x = 0.639219 * safezoneW + safezoneX;
+			y = 0.192 * safezoneH + safezoneY;
+			w = 0.0979687 * safezoneW;
 			h = 0.187 * safezoneH;
-			action = "closeDialog 2002";
 		};
-		class RscButton_1602: RscButton
+		class Admin: RscButton
 		{
 			idc = 1602;
-			text = "Close Menu"; //--- ToDo: Localize;
-			x = 0.608281 * safezoneW + safezoneX;
-			y = 0.555 * safezoneH + safezoneY;
-			w = 0.190781 * safezoneW;
+			x = 0.5 * safezoneW + safezoneX;
+			y = 0.401 * safezoneH + safezoneY;
+			w = 0.0979687 * safezoneW;
 			h = 0.187 * safezoneH;
-			action = "closeDialog 2002";
 		};
-		class RscButton_1603: RscButton
+		class Logistics: RscButton
 		{
 			idc = 1603;
-			text = "Company Administration"; //--- ToDo: Localize;
-			x = 0.603125 * safezoneW + safezoneX;
-			y = 0.258 * safezoneH + safezoneY;
-			w = 0.190781 * safezoneW;
+			x = 0.639219 * safezoneW + safezoneX;
+			y = 0.401 * safezoneH + safezoneY;
+			w = 0.0979687 * safezoneW;
 			h = 0.187 * safezoneH;
-			action = "closeDialog 2002; execVM 'UI\Scripts\CompanyAdminInit.sqf'";
+		};
+		class Quit: RscButton
+		{
+			idc = 1604;
+			x = 0.742344 * safezoneW + safezoneX;
+			y = 0.698 * safezoneH + safezoneY;
+			w = 0.0979687 * safezoneW;
+			h = 0.187 * safezoneH;
+		};
+		class Github: RscButton
+		{
+			idc = 1605;
+			x = 0.799062 * safezoneW + safezoneX;
+			y = 0.335 * safezoneH + safezoneY;
+			w = 0.0309375 * safezoneW;
+			h = 0.055 * safezoneH;
+			url = "https://github.com/UncreatedLemon1/Lemon-s-Warfare";
+		};
+		class Youtube: RscButton
+		{
+			idc = 1606;
+			x = 0.799062 * safezoneW + safezoneX;
+			y = 0.269 * safezoneH + safezoneY;
+			w = 0.0309375 * safezoneW;
+			h = 0.055 * safezoneH;
+			url = "https://youtu.be/Ifig6gggVwQ?t=100";
+		};
+		class Discord: RscButton
+		{
+			idc = 1607;
+			x = 0.799062 * safezoneW + safezoneX;
+			y = 0.203 * safezoneH + safezoneY;
+			w = 0.0309375 * safezoneW;
+			h = 0.055 * safezoneH;
+			url = "https://discord.gg/DWPa3cbZHb";
+		};
+		class PlayerName: RscText
+		{
+			idc = 1000;
+			x = 0.371094 * safezoneW + safezoneX;
+			y = 0.126 * safezoneH + safezoneY;
+			w = 0.232031 * safezoneW;
+			h = 0.055 * safezoneH;
+		};
+		class ServerChanges: RscText
+		{
+			idc = 1001;
+			x = 0.200937 * safezoneW + safezoneX;
+			y = 0.269 * safezoneH + safezoneY;
+			w = 0.226875 * safezoneW;
+			h = 0.495 * safezoneH;
 		};
 	};
 };
 
 class LmnOS_Directory
 {
-	idd = 2003;
-	class Controls
+	idd = 2;
+	onLoad = "execVM 'UI\Scripts\Directory.sqf'";
+	class Controls 
 	{
-		class RscPicture_1200: RscPicture
-		{
-			idc = 1200;
-			text = "UI\Images\Company Directory2.jpg";
-			x = 0.144116 * safezoneW + safezoneX;
-			y = 0.06198 * safezoneH + safezoneY;
-			w = 0.732187 * safezoneW;
-			h = 0.847 * safezoneH;
-		};
-
-		class RscListbox_1500: RscListBox
-		{
-			idc = 1500;
-
-			x = 0.242187 * safezoneW + safezoneX;
-			y = 0.225 * safezoneH + safezoneY;
-			w = 0.190781 * safezoneW;
-			h = 0.517 * safezoneH;
-		};
-		class RscStructuredText_1101: RscStructuredText
-		{
-			idc = 1101;
-
-			text = "Company Info"; //--- ToDo: Localize;
-			x = 0.603125 * safezoneW + safezoneX;
-			y = 0.566 * safezoneH + safezoneY;
-			w = 0.195937 * safezoneW;
-			h = 0.242 * safezoneH;
-		};
-		class RscButton_1600: RscButton
-		{
-			idc = 1600;
-
-			text = "Request to Join"; //--- ToDo: Localize;
-			x = 0.45875 * safezoneW + safezoneX;
-			y = 0.709 * safezoneH + safezoneY;
-			w = 0.0928125 * safezoneW;
-			h = 0.088 * safezoneH;
-			action = "execVM 'UI\Scripts\ApplyCompany.sqf'";
-		};
-		class RscButton_1601: RscButton
+		class Enlist: RscButton
 		{
 			idc = 1601;
 
-			text = "Main Menu"; //--- ToDo: Localize;
-			x = 0.45875 * safezoneW + safezoneX;
-			y = 0.247 * safezoneH + safezoneY;
-			w = 0.0928125 * safezoneW;
-			h = 0.088 * safezoneH;
-			action = "closeDialog 2003; createDialog 'LmnOS_Menu'";
-		};
-		class RscStructuredText_1102: RscStructuredText
-		{
-			idc = 1102;
-
-			text = "Company Specialty"; //--- ToDo: Localize;
-			x = 0.603125 * safezoneW + safezoneX;
-			y = 0.434 * safezoneH + safezoneY;
-			w = 0.195937 * safezoneW;
-			h = 0.055 * safezoneH;
-		};
-		class RscStructuredText_1103: RscStructuredText
-		{
-			idc = 1103;
-
-			text = "Company Origin"; //--- ToDo: Localize;
-			x = 0.603125 * safezoneW + safezoneX;
-			y = 0.368 * safezoneH + safezoneY;
-			w = 0.195937 * safezoneW;
-			h = 0.055 * safezoneH;
-		};
-		class RscStructuredText_1104: RscStructuredText
-		{
-			idc = 1100;
-
-			text = "Company Leader"; //--- ToDo: Localize;
-			x = 0.603125 * safezoneW + safezoneX;
-			y = 0.302 * safezoneH + safezoneY;
-			w = 0.195937 * safezoneW;
-			h = 0.055 * safezoneH;
-		};
-		class RscStructuredText_1105: RscStructuredText
-		{
-			idc = 1104;
-
-			text = "Company Name"; //--- ToDo: Localize;
-			x = 0.603125 * safezoneW + safezoneX;
-			y = 0.236 * safezoneH + safezoneY;
-			w = 0.195937 * safezoneW;
-			h = 0.055 * safezoneH;
-		};
-		class RscButton_1602: RscButton
-		{
-			idc = 1602;
-			text = "Click to View Vehicles"; //--- ToDo: Localize;
-			x = 0.603125 * safezoneW + safezoneX;
-			y = 0.5 * safezoneH + safezoneY;
-			w = 0.195937 * safezoneW;
-			h = 0.055 * safezoneH;
-		};
-	};
-};
-
-class LmnOS_Thanks
-{
-	idd = 2004;
-	class Controls
-	{
-		class RscPicture_1200: RscPicture
-		{
-			idc = 1200;
-			text = "UI\Images\Thanks.jpg";
-			x = 0.144116 * safezoneW + safezoneX;
-			y = 0.06198 * safezoneH + safezoneY;
-			w = 0.732187 * safezoneW;
-			h = 0.847 * safezoneH;
-		};
-
-	};
-};
-
-class LmnOS_Administration
-{
-	idd = 2005;
-	class Controls
-	{
-		class RscPicture_1200: RscPicture
-		{
-			idc = 1200;
-			text = "UI\Images\Company Administration.jpg";
-			x = 0.144116 * safezoneW + safezoneX;
-			y = 0.06198 * safezoneH + safezoneY;
-			w = 0.732187 * safezoneW;
-			h = 0.847 * safezoneH;
-		};
-		class RscListbox_1500: RscListbox // Current Members
-		{
-			idc = 1500;
-			x = 0.200937 * safezoneW + safezoneX;
-			y = 0.291 * safezoneH + safezoneY;
-			w = 0.232031 * safezoneW;
-			h = 0.462 * safezoneH;
-		};
-		class RscText_1000: RscText
-		{
-			idc = 1000;
-			text = "Current Members"; //--- ToDo: Localize;
-			x = 0.278281 * safezoneW + safezoneX;
-			y = 0.214 * safezoneH + safezoneY;
-			w = 0.0773437 * safezoneW;
-			h = 0.066 * safezoneH;
-		};
-		class RscListbox_1501: RscListbox // Applicants
-		{
-			idc = 1501;
-			x = 0.587656 * safezoneW + safezoneX;
-			y = 0.291 * safezoneH + safezoneY;
-			w = 0.159844 * safezoneW;
-			h = 0.462 * safezoneH;
-		};
-		class RscText_1001: RscText
-		{
-			idc = 1001;
-			text = "Applicants"; //--- ToDo: Localize;
-			x = 0.634062 * safezoneW + safezoneX;
-			y = 0.214 * safezoneH + safezoneY;
-			w = 0.0721875 * safezoneW;
-			h = 0.066 * safezoneH;
-		};
-		class RscButton_1600: RscButton
-		{
-			idc = 1600;
-			text = "Approve"; //--- ToDo: Localize;
-			x = 0.762969 * safezoneW + safezoneX;
-			y = 0.291 * safezoneH + safezoneY;
-			w = 0.0876563 * safezoneW;
-			h = 0.077 * safezoneH;
-			// action = "execVM 'approve.sqf'";
-		};
-		class RscButton_1601: RscButton
-		{
-			idc = 1601;
-			text = "Deny"; //--- ToDo: Localize;
-			x = 0.762969 * safezoneW + safezoneX;
-			y = 0.379 * safezoneH + safezoneY;
-			w = 0.0876563 * safezoneW;
-			h = 0.077 * safezoneH;
-			// action = "execVM 'Deny.sqf'";
-		};
-		class RscButton_1602: RscButton
-		{
-			idc = 1602;
-			text = "Main Menu"; //--- ToDo: Localize;
-			x = 0.463906 * safezoneW + safezoneX;
-			y = 0.676 * safezoneH + safezoneY;
-			w = 0.0876563 * safezoneW;
-			h = 0.077 * safezoneH;
-			action = "closeDialog 2005; createDialog 'LmnOS_Menu'";
-		};
-
-	};
-};
-
-class LmnOS_Vehicles
-{
-	idd = 2006;
-	class Controls
-	{
-		class RscPicture_1200: RscPicture
-		{
-			idc = 1200;
-			text = "UI\Images\Company Vehicles.jpg";
-			x = 0.144116 * safezoneW + safezoneX;
-			y = 0.06198 * safezoneH + safezoneY;
-			w = 0.732187 * safezoneW;
-			h = 0.847 * safezoneH;
-		};
-		class RscPicture_1201: RscPicture
-		{
-			idc = 1201;
-			text = "#(argb,8,8,3)color(1,1,1,1)";
-			x = 0.273125 * safezoneW + safezoneX;
-			y = 0.28 * safezoneH + safezoneY;
-			w = 0.190781 * safezoneW;
-			h = 0.209 * safezoneH;
-		};
-		class RscPicture_1202: RscPicture
-		{
-			idc = 1202;
-			text = "#(argb,8,8,3)color(1,1,1,1)";
-			x = 0.536094 * safezoneW + safezoneX;
-			y = 0.28 * safezoneH + safezoneY;
-			w = 0.190781 * safezoneW;
-			h = 0.209 * safezoneH;
-		};
-		class RscPicture_1203: RscPicture
-		{
-			idc = 1203;
-			text = "#(argb,8,8,3)color(1,1,1,1)";
-			x = 0.273125 * safezoneW + safezoneX;
-			y = 0.61 * safezoneH + safezoneY;
-			w = 0.190781 * safezoneW;
-			h = 0.209 * safezoneH;
-		};
-		class RscPicture_1204: RscPicture
-		{
-			idc = 1204;
-			text = "#(argb,8,8,3)color(1,1,1,1)";
-			x = 0.536094 * safezoneW + safezoneX;
-			y = 0.61 * safezoneH + safezoneY;
-			w = 0.190781 * safezoneW;
-			h = 0.209 * safezoneH;
-		};
-		class RscButton_1600: RscButton
-		{
-			idc = 1600;
-			text = "Back to Menu"; //--- ToDo: Localize;
 			x = 0.453594 * safezoneW + safezoneX;
-			y = 0.511 * safezoneH + safezoneY;
-			w = 0.0825 * safezoneW;
-			h = 0.077 * safezoneH;
-			action = "closeDialog 2006; createDialog 'LmnOS_Menu'";
+			y = 0.192 * safezoneH + safezoneY;
+			w = 0.0979687 * safezoneW;
+			h = 0.187 * safezoneH;
 		};
+		class Github: RscButton
+		{
+			idc = 1605;
+			url = "https://github.com/UncreatedLemon1/Lemon-s-Warfare";
 
-	};
-};
+			x = 0.799062 * safezoneW + safezoneX;
+			y = 0.335 * safezoneH + safezoneY;
+			w = 0.0309375 * safezoneW;
+			h = 0.055 * safezoneH;
+		};
+		class Youtube: RscButton
+		{
+			idc = 1606;
+			url = "https://youtu.be/Ifig6gggVwQ?t=100";
 
-class LmnOS_VehicleSpawn
-{
-	idd = 2007;
-	class Controls
-	{
+			x = 0.799062 * safezoneW + safezoneX;
+			y = 0.269 * safezoneH + safezoneY;
+			w = 0.0309375 * safezoneW;
+			h = 0.055 * safezoneH;
+		};
+		class Discord: RscButton
+		{
+			idc = 1607;
+			url = "https://discord.gg/DWPa3cbZHb";
+
+			x = 0.799062 * safezoneW + safezoneX;
+			y = 0.203 * safezoneH + safezoneY;
+			w = 0.0309375 * safezoneW;
+			h = 0.055 * safezoneH;
+		};
+		class Back: RscButton
+		{
+			idc = 1602;
+
+			x = 0.567031 * safezoneW + safezoneX;
+			y = 0.192 * safezoneH + safezoneY;
+			w = 0.0979687 * safezoneW;
+			h = 0.187 * safezoneH;
+		};
+		class Quit: RscButton
+		{
+			idc = 1605;
+
+			x = 0.793906 * safezoneW + safezoneX;
+			y = 0.797 * safezoneH + safezoneY;
+			w = 0.0515625 * safezoneW;
+			h = 0.088 * safezoneH;
+		};
+		class RscListbox_1500: RscListbox
+		{
+			idc = 1500;
+			x = 0.190625 * safezoneW + safezoneX;
+			y = 0.214 * safezoneH + safezoneY;
+			w = 0.2475 * safezoneW;
+			h = 0.594 * safezoneH;
+			// onLBSelChanged = "[] call Lmn_fnc_updateText";
+		};
+		class RscText_1002: RscText
+		{
+			idc = 2002;
+			x = 0.469062 * safezoneW + safezoneX;
+			y = 0.456 * safezoneH + safezoneY;
+			w = 0.226875 * safezoneW;
+			h = 0.374 * safezoneH;
+		};
+		class RscText_1010: RscText
+		{
+			idc = 2100;
+			text = "Owner Name"; //--- ToDo: Localize;
+			x = 0.474219 * safezoneW + safezoneX;
+			y = 0.456 * safezoneH + safezoneY;
+			w = 0.216563 * safezoneW;
+			h = 0.055 * safezoneH;
+		};
+		class RscText_1011: RscText
+		{
+			idc = 2101;
+			text = "Member Count"; //--- ToDo: Localize;
+			x = 0.474219 * safezoneW + safezoneX;
+			y = 0.522 * safezoneH + safezoneY;
+			w = 0.216563 * safezoneW;
+			h = 0.055 * safezoneH;
+		};
+		class RscText_1012: RscText
+		{
+			idc = 2102;
+			text = "About"; //--- ToDo: Localize;
+			x = 0.47422 * safezoneW + safezoneX;
+			y = 0.588 * safezoneH + safezoneY;
+			w = 0.216563 * safezoneW;
+			h = 0.165 * safezoneH;
+		};
 		class RscPicture_1200: RscPicture
 		{
 			idc = 1200;
-			text = "UI\Images\Company Directory2.jpg";
-			x = 0.144116 * safezoneW + safezoneX;
-			y = 0.06198 * safezoneH + safezoneY;
-			w = 0.732187 * safezoneW;
-			h = 0.847 * safezoneH;
-		};
-		class RscListbox_1500: RscListBox
-		{
-			idc = 1500;
 
-			x = 0.242187 * safezoneW + safezoneX;
-			y = 0.225 * safezoneH + safezoneY;
-			w = 0.190781 * safezoneW;
-			h = 0.517 * safezoneH;
-		};
-		class RscButton_1600: RscButton
-		{
-			idc = 1600;
-
-			text = "Spawn Selected Vehicle"; //--- ToDo: Localize;
-			x = 0.45875 * safezoneW + safezoneX;
-			y = 0.709 * safezoneH + safezoneY;
-			w = 0.0928125 * safezoneW;
-			h = 0.088 * safezoneH;
-			action = "execVM 'UI\Scripts\spawnVehicle.sqf'";
+			text = "UI\Images\LemonOS_Directory.jpg";
+			x = 0.159687 * safezoneW + safezoneX;
+			y = 0.082 * safezoneH + safezoneY;
+			w = 0.690938 * safezoneW;
+			h = 0.814 * safezoneH;
 		};
 	};
+};
+
+class LmnOS_Logistics
+{
+	idd = 3;
+	onLoad = "execVM 'UI\Scripts\Logistics.sqf'";
+	class Controls 
+	{
+	class Github: RscButton
+	{
+		idc = 1605;
+		url = "https://github.com/UncreatedLemon1/Lemon-s-Warfare";
+
+		x = 0.799062 * safezoneW + safezoneX;
+		y = 0.335 * safezoneH + safezoneY;
+		w = 0.0309375 * safezoneW;
+		h = 0.055 * safezoneH;
+	};
+	class Youtube: RscButton
+	{
+		idc = 1606;
+		url = "https://youtu.be/Ifig6gggVwQ?t=100";
+
+		x = 0.799062 * safezoneW + safezoneX;
+		y = 0.269 * safezoneH + safezoneY;
+		w = 0.0309375 * safezoneW;
+		h = 0.055 * safezoneH;
+	};
+	class Discord: RscButton
+	{
+		idc = 1607;
+		url = "https://discord.gg/DWPa3cbZHb";
+
+		x = 0.799062 * safezoneW + safezoneX;
+		y = 0.203 * safezoneH + safezoneY;
+		w = 0.0309375 * safezoneW;
+		h = 0.055 * safezoneH;
+	};
+	class Back: RscButton
+	{
+		idc = 1602;
+
+		x = 0.701094 * safezoneW + safezoneX;
+		y = 0.632 * safezoneH + safezoneY;
+		w = 0.0979687 * safezoneW;
+		h = 0.187 * safezoneH;
+	};
+	class Quit: RscButton
+	{
+		idc = 1605;
+
+		x = 0.793906 * safezoneW + safezoneX;
+		y = 0.797 * safezoneH + safezoneY;
+		w = 0.0515625 * safezoneW;
+		h = 0.088 * safezoneH;
+	};
+	class SpawnList: RscText
+	{
+		idc = 1500;
+
+		x = 0.190625 * safezoneW + safezoneX;
+		y = 0.214 * safezoneH + safezoneY;
+		w = 0.2475 * safezoneW;
+		h = 0.594 * safezoneH;
+	};
+	class RscText_1002: RscText
+	{
+		idc = 2002;
+
+		x = 0.469062 * safezoneW + safezoneX;
+		y = 0.456 * safezoneH + safezoneY;
+		w = 0.226875 * safezoneW;
+		h = 0.374 * safezoneH;
+	};
+		class RscPicture_1200: RscPicture
+		{
+			idc = 1200;
+
+			text = "UI\Images\LemonOS_Logistics.jpg";
+			x = 0.159687 * safezoneW + safezoneX;
+			y = 0.082 * safezoneH + safezoneY;
+			w = 0.690938 * safezoneW;
+			h = 0.814 * safezoneH;
+		};
+	};
+};
+
+////////////////////////////////////////////////////////
+// GUI EDITOR OUTPUT START (by Lemon, v1.063, #Vufifa)
+////////////////////////////////////////////////////////
+
+
+class RscPicture_1200: RscPicture
+{
+	idc = 1200;
+
+	text = "UI\Images\LemonOS_Logistics.jpg";
+	x = 0.164844 * safezoneW + safezoneX;
+	y = 0.082 * safezoneH + safezoneY;
+	w = 0.690938 * safezoneW;
+	h = 0.814 * safezoneH;
+};
+class Spawn: RscButton
+{
+	idc = 1602;
+
+	x = 0.701094 * safezoneW + safezoneX;
+	y = 0.434 * safezoneH + safezoneY;
+	w = 0.0979687 * safezoneW;
+	h = 0.187 * safezoneH;
 };

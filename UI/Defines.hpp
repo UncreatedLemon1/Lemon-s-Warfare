@@ -150,13 +150,13 @@ class RscText
 	w = 0.3;
 	style = ST_LEFT;
 	shadow = 1;
-	colorShadow[] = {0,0,0,0.5};
+	colorShadow[] = {0,0,0,0};
 	font = "RobotoCondensed";
 	SizeEx = GUI_TEXT_SIZE_MEDIUM;
 	linespacing = 1;
 	tooltipColorText[] = {1,1,1,1};
 	tooltipColorBox[] = {1,1,1,1};
-	tooltipColorShade[] = {0,0,0,0.65};
+	tooltipColorShade[] = {0,0,0,0};
 };
 class RscFrame
 {
@@ -328,14 +328,14 @@ class RscButton
 	access = 0;
 	type = CT_BUTTON;
 	text = "";
-	colorText[] = {1,1,1,1};
-	colorDisabled[] = {1,1,1,0.25};
-	colorBackground[] = {0,0,0,0.5};
-	colorBackgroundDisabled[] = {0,0,0,0.5};
-	colorBackgroundActive[] = {0,0,0,1};
-	colorFocused[] = {0,0,0,1};
+	colorText[] = {1,1,1,0};
+	colorDisabled[] = {1,1,1,0};
+	colorBackground[] = {0,0,0,0};
+	colorBackgroundDisabled[] = {0,0,0,0};
+	colorBackgroundActive[] = {0,0,0,0};
+	colorFocused[] = {0,0,0,0};
 	colorShadow[] = {0,0,0,0};
-	colorBorder[] = {0,0,0,1};
+	colorBorder[] = {0,0,0,0};
 	soundEnter[] =
 	{
 		"\A3\ui_f\data\sound\RscButton\soundEnter",
@@ -406,9 +406,9 @@ class RscShortcutButton
 	};
 	shortcuts[] = {};
 	textureNoShortcut = "#(argb,8,8,3)color(0,0,0,0)";
-	color[] = {1,1,1,1};
-	colorFocused[] = {1,1,1,1};
-	color2[] = {0.95,0.95,0.95,1};
+	color[] = {1,1,1,0};
+	colorFocused[] = {1,1,1,0};
+	color2[] = {0.95,0.95,0.95,0};
 	colorDisabled[] = {1,1,1,0.25};
 	colorBackground[] =
 	{
@@ -596,8 +596,8 @@ class RscListBox
 	colorSelect[] = {0,0,0,1};
 	colorSelect2[] = {0,0,0,1};
 	colorSelectBackground[] = {0.95,0.95,0.95,1};
-	colorSelectBackground2[] = {1,1,1,0.5};
-	colorBackground[] = {0,0,0,0.3};
+	colorSelectBackground2[] = {1,1,1,0};
+	colorBackground[] = {0,0,0,0};
 	soundSelect[] =
 	{
 		"\A3\ui_f\data\sound\RscListbox\soundSelect",

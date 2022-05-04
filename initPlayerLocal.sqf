@@ -1,26 +1,50 @@
-// Add player persistence
-_playerData = profileNameSpace getVariable format ["Player_Data_%1_%2", missionName, worldName];
+// Save to Inidbi database 
+_playerID = getPlayerUID player;
+_playerName = name player;
 
-_loadout = _playerData select 0;
-_position = _playerData select 1;
-_dir = _playerData select 2;
+_playerDataBase = ["new", format ["%1_%2", _playerName, _playerID]] call OO_INIDBI;
+_dataBaseExists = "exists" call _playerDataBase;
 
-if (isNil "_playerData") then {
- 
-} else {
-  player setUnitLoadout _loadout;
-  player setPosASL _position;
+if (_dataBaseExists) then {
+  // Load profile and set character 
+  _pos = ["read", ["Player Persistence", "Position"]] call _playerDataBase;
+  _dir = ["read", ["Player Persistence", "Direction"]] call _playerDataBase;
+  _loadout = ["read", ["Player Persistence", "Loadout"]] call _playerDataBase; 
+
+  // Set character 
+  player setPosATL _pos;
   player setDir _dir;
+  player setUnitLoadout _loadout;
+
+  // Announce to player 
+  systemChat format ["Profile loaded! Welcome back %1!", _playerName];
+  sleep 1;
+  systemChat "Thank you for joining Lemon's Hardcore Server today!";  
+
+} else {
+  // Create Profile
+  ["write", ["Player Info", "Player Name", _playerName]] call _playerDataBase;
+  ["write", ["Player Info", "Player ID", _playerID]] call _playerDataBase;
+  ["write", ["Player Info", "Player Company", "NATO"]] call _playerDataBase;
+
+  // Announce to player 
+  systemChat format ["Welcome to Lemon's Hardcore Server %1, I hope you enjoy your stay!", _playerName];
+  sleep 1;
+  systemChat "Player Profile Created";
 };
 
+// Save data 
 while {true} do {
-  // Get player variables
-  _loadout = getUnitLoadout player;
-  _position = getPosASL player; 
+  // Get persistent information
+  _pos = getPosATL player;
   _dir = getDir player;
-  
-  // Save variable to player profile
-  profileNameSpace setVariable [format ["Player_Data_%1_%2", missionName, worldName], [_loadout, _position, _dir]];
-  
+  _loadout = getUnitLoadout player;
+
+  // Save to database 
+  ["write", ["Player Persistence", "Position", _pos]] call _playerDataBase;
+  ["write", ["Player Persistence", "Direction", _dir]] call _playerDataBase;
+  ["write", ["Player Persistence", "Loadout", _loadout]] call _playerDataBase; 
+
+  // Loop script  
   sleep 5;
 };

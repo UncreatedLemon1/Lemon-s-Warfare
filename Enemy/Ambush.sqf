@@ -1,9 +1,10 @@
+params ["_ao"];
 // find roads in map
-_roads = CenterPoint nearRoads 20000;
+_roads = _ao nearRoads 2000;
 
 // select road to be ambush point and populate
 _ambushCount = 0;
-_ambushTotal = random [10, 20, 30];
+_ambushTotal = random 6;
 
 While {_ambushCount < _ambushTotal} do {
 	// Select road where ambush will occur
@@ -21,7 +22,7 @@ While {_ambushCount < _ambushTotal} do {
 	_grpsize = random 10;
 	for "_i" from 0 to _grpSize do {
 		_soldierType = selectRandom ["rhs_vdv_RShG2", "rhs_vdv_LAT", "rhs_vdv_machinegunner", "rhs_vdv_at"];
-		_soldier = _grp createUnit [_soldierType, _roadPos, [], 15, "FORM"];		
+		_soldier = _grp createUnit [_soldierType, _roadPos, [], 15, "FORM"];
 	};
 	[_grp, _roadPos] call BIS_fnc_taskDefend;
 
@@ -48,7 +49,7 @@ While {_ambushCount < _ambushTotal} do {
 		"Land_Wreck_MBT_04_F"
 	];
 	_chanceofWreck = random 100;
-	if (_chanceofWreck > 50) then {
+	if (_chanceofWreck < 25) then {
 		_selectWreck = selectRandom _wrecks;
 		_selectWreck createVehicle _roadPos;
 	};

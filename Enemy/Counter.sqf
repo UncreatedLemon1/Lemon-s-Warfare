@@ -1,22 +1,30 @@
-// Enemy counter to see when objective is cleared out
+params ["_ao"];
 
+// Checkup on the AO location 
 while {true} do {
-  sleep 120;
-  _ao = getPos Lmn_activeAO;
-  _activeAI = [];
-  _aiCount = 0;
-  {
-    // Current result is saved in variable _x
-    if ((_x distance _ao < 700) and (side _x == east)) then {
-      _activeAI pushBack _x;
-      _aiCount = count _activeAI;
-      };
-  } forEach allUnits;
+	_enemyCount = east countSide allUnits;
+	
+	if (_enemyCount < 10) then {
+		systemChat "Good work! The area has been cleared, the Russians are regrouping!";
+		sleep 3;
+		systemChat "Cleaning up old AO...";
+		enemyPoint = _ao;
+		{
+			// Current result is saved in variable _x
+			if (side _x == east) then {
+				deleteVehicle _x;
+			};
+		} forEach vehicles;
+		{
+			// Current result is saved in variable _x
+			if (side _x == east) then {
+				deleteVehicle _x;
+			};
+		} forEach allUnits;
 
-  if (_aiCount < 10) then {
-    execVM "Setup\Cleanup.sqf";
-    [player,"Nice work! Take some time to re-arm and prep for your next mission tasking"] remoteExec ["globalChat",0];
-  } else {
-    //hint format ["%1", _aiCount];
-  };
+		execVM "Setup\Enemy.sqf";
+	} else {
+
+	sleep 120;
+	};
 };
