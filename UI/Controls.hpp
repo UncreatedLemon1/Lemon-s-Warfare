@@ -223,74 +223,65 @@ class LmnOS_Logistics
 {
 	idd = 3;
 	onLoad = "execVM 'UI\Scripts\Logistics.sqf'";
-	class Controls 
+	class Controls
 	{
-	class Github: RscButton
-	{
-		idc = 1605;
-		url = "https://github.com/UncreatedLemon1/Lemon-s-Warfare";
+		class Github: RscButton
+		{
+			idc = 1605;
+			url = "https://github.com/UncreatedLemon1/Lemon-s-Warfare";
 
-		x = 0.799062 * safezoneW + safezoneX;
-		y = 0.335 * safezoneH + safezoneY;
-		w = 0.0309375 * safezoneW;
-		h = 0.055 * safezoneH;
-	};
-	class Youtube: RscButton
-	{
-		idc = 1606;
-		url = "https://youtu.be/Ifig6gggVwQ?t=100";
+			x = 0.799062 * safezoneW + safezoneX;
+			y = 0.335 * safezoneH + safezoneY;
+			w = 0.0309375 * safezoneW;
+			h = 0.055 * safezoneH;
+		};
+		class Youtube: RscButton
+		{
+			idc = 1606;
+			url = "https://youtu.be/Ifig6gggVwQ?t=100";
 
-		x = 0.799062 * safezoneW + safezoneX;
-		y = 0.269 * safezoneH + safezoneY;
-		w = 0.0309375 * safezoneW;
-		h = 0.055 * safezoneH;
-	};
-	class Discord: RscButton
-	{
-		idc = 1607;
-		url = "https://discord.gg/DWPa3cbZHb";
+			x = 0.799062 * safezoneW + safezoneX;
+			y = 0.269 * safezoneH + safezoneY;
+			w = 0.0309375 * safezoneW;
+			h = 0.055 * safezoneH;
+		};
+		class Discord: RscButton
+		{
+			idc = 1607;
+			url = "https://discord.gg/DWPa3cbZHb";
 
-		x = 0.799062 * safezoneW + safezoneX;
-		y = 0.203 * safezoneH + safezoneY;
-		w = 0.0309375 * safezoneW;
-		h = 0.055 * safezoneH;
-	};
-	class Back: RscButton
-	{
-		idc = 1602;
+			x = 0.799062 * safezoneW + safezoneX;
+			y = 0.203 * safezoneH + safezoneY;
+			w = 0.0309375 * safezoneW;
+			h = 0.055 * safezoneH;
+		};
+		class Back: RscButton
+		{
+			idc = 1602;
 
-		x = 0.701094 * safezoneW + safezoneX;
-		y = 0.632 * safezoneH + safezoneY;
-		w = 0.0979687 * safezoneW;
-		h = 0.187 * safezoneH;
-	};
-	class Quit: RscButton
-	{
-		idc = 1605;
+			x = 0.701094 * safezoneW + safezoneX;
+			y = 0.632 * safezoneH + safezoneY;
+			w = 0.0979687 * safezoneW;
+			h = 0.187 * safezoneH;
+		};
+		class Quit: RscButton
+		{
+			idc = 1605;
 
-		x = 0.793906 * safezoneW + safezoneX;
-		y = 0.797 * safezoneH + safezoneY;
-		w = 0.0515625 * safezoneW;
-		h = 0.088 * safezoneH;
-	};
-	class SpawnList: RscText
-	{
-		idc = 1500;
+			x = 0.793906 * safezoneW + safezoneX;
+			y = 0.797 * safezoneH + safezoneY;
+			w = 0.0515625 * safezoneW;
+			h = 0.088 * safezoneH;
+		};
+		class Text: RscText
+		{
+			idc = 2002;
 
-		x = 0.190625 * safezoneW + safezoneX;
-		y = 0.214 * safezoneH + safezoneY;
-		w = 0.2475 * safezoneW;
-		h = 0.594 * safezoneH;
-	};
-	class RscText_1002: RscText
-	{
-		idc = 2002;
-
-		x = 0.469062 * safezoneW + safezoneX;
-		y = 0.456 * safezoneH + safezoneY;
-		w = 0.226875 * safezoneW;
-		h = 0.374 * safezoneH;
-	};
+			x = 17 * GUI_GRID_W + GUI_GRID_X;
+			y = 10.5 * GUI_GRID_H + GUI_GRID_Y;
+			w = 22 * GUI_GRID_W;
+			h = 17 * GUI_GRID_H;
+		};
 		class RscPicture_1200: RscPicture
 		{
 			idc = 1200;
@@ -301,30 +292,40 @@ class LmnOS_Logistics
 			w = 0.690938 * safezoneW;
 			h = 0.814 * safezoneH;
 		};
+		class Spawn: RscButton
+		{
+			idc = 1620;
+
+			x = 0.701094 * safezoneW + safezoneX;
+			y = 0.423 * safezoneH + safezoneY;
+			w = 0.0979687 * safezoneW;
+			h = 0.187 * safezoneH;
+		};
+		class Objects: RscListbox
+		{
+			idc = 1500;
+			x = 0.453594 * safezoneW + safezoneX;
+			y = 0.214 * safezoneH + safezoneY;
+			w = 0.237187 * safezoneW;
+			h = 0.594 * safezoneH;
+		};
+		class ObjectType: RscListbox
+		{
+			idc = 1501;
+			x = 0.190625 * safezoneW + safezoneX;
+			y = 0.214 * safezoneH + safezoneY;
+			w = 0.2475 * safezoneW;
+			h = 0.594 * safezoneH;
+		};
+		class ObjectPreview: RscPicture
+		{
+			idc = 2022;
+
+			text = "#(argb,8,8,3)color(1,1,1,1)";
+			x = 0.453594 * safezoneW + safezoneX;
+			y = 0.511 * safezoneH + safezoneY;
+			w = 0.237187 * safezoneW;
+			h = 0.297 * safezoneH;
+		};
 	};
-};
-
-////////////////////////////////////////////////////////
-// GUI EDITOR OUTPUT START (by Lemon, v1.063, #Vufifa)
-////////////////////////////////////////////////////////
-
-
-class RscPicture_1200: RscPicture
-{
-	idc = 1200;
-
-	text = "UI\Images\LemonOS_Logistics.jpg";
-	x = 0.164844 * safezoneW + safezoneX;
-	y = 0.082 * safezoneH + safezoneY;
-	w = 0.690938 * safezoneW;
-	h = 0.814 * safezoneH;
-};
-class Spawn: RscButton
-{
-	idc = 1602;
-
-	x = 0.701094 * safezoneW + safezoneX;
-	y = 0.434 * safezoneH + safezoneY;
-	w = 0.0979687 * safezoneW;
-	h = 0.187 * safezoneH;
 };

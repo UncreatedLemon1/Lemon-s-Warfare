@@ -2,3 +2,14 @@ RespawnOnStart = -1;
 
 #include "UI\Defines.hpp"
 #include "UI\Controls.hpp"
+
+class cfgFunctions 
+{
+	class Lmn
+	{
+		class Enemy
+		{
+			class spawnGroup {};
+		};
+	};
+};
